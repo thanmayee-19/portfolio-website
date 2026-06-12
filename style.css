@@ -10,8 +10,8 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #0f172a;
-    color: white;
+    background-color: #F8F5F2;
+    color: #3B3B3B;
     line-height: 1.6;
 }
 
@@ -28,15 +28,14 @@ nav {
 
     padding: 20px 60px;
 
-    background: rgba(2, 6, 23, 0.95);
+    background: #EAE3DC;
     backdrop-filter: blur(10px);
 
-    border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+    border-bottom: 1px solid #D8CFC4;
 }
 
-nav h2 {
-    color: #38bdf8;
-    font-size: 1.8rem;
+nav h2{
+    color:#7D5A50;
 }
 
 nav ul {
@@ -47,7 +46,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color:#3B3B3B;
     font-weight: 500;
     position: relative;
 }
@@ -62,7 +61,7 @@ nav ul li a::after {
     width: 0;
     height: 2px;
 
-    background: #38bdf8;
+    color:#7D5A50;
 
     transition: 0.3s;
 }
@@ -80,7 +79,7 @@ section {
 h2 {
     font-size: 2.2rem;
     margin-bottom: 30px;
-    color: #38bdf8;
+    color:#7D5A50;
 }
 
 h2::after {
@@ -90,7 +89,7 @@ h2::after {
     width: 70px;
     height: 4px;
 
-    background: #38bdf8;
+    color:#7D5A50;
 
     margin-top: 10px;
     border-radius: 5px;
@@ -125,7 +124,7 @@ h2::after {
 #home p {
     margin: 20px 0;
     font-size: 1.3rem;
-    color: #cbd5e1;
+    color:#6B6B6B;
 }
 
 #home button {
@@ -134,8 +133,8 @@ h2::after {
     border: none;
     border-radius: 8px;
 
-    background-color: #38bdf8;
-    color: black;
+   background:#B08968;
+    color:white;
 
     font-size: 1rem;
     font-weight: 600;
@@ -147,7 +146,7 @@ h2::after {
 
 #home button:hover {
     transform: translateY(-3px);
-    background-color: #0ea5e9;
+    background:#8B6B4A;
 }
 
 /* ABOUT */
@@ -180,7 +179,7 @@ h2::after {
 .about-content p {
     font-size: 1.25rem;
     line-height: 2;
-    color: #cbd5e1;
+    color: #2F2F2F;
     margin-bottom: 25px;
 }
 
@@ -191,8 +190,8 @@ h2::after {
 
     padding: 12px 24px;
 
-    background: #38bdf8;
-    color: black;
+    background: #B08968;
+    color: white;
 
     border-radius: 8px;
     text-decoration: none;
@@ -203,7 +202,7 @@ h2::after {
 }
 
 .resume-btn:hover {
-    background: #0ea5e9;
+    background: #8B6B4A;
 }
 /* SKILLS */
 
@@ -214,13 +213,13 @@ h2::after {
 }
 
 .skill-card {
-    background: #1e293b;
+    background:#FFFFFF;
 
     padding: 12px 24px;
 
     border-radius: 30px;
 
-    border: 1px solid transparent;
+    border:1px solid #D8CFC4;
 
     transition: 0.3s;
 
@@ -240,32 +239,63 @@ h2::after {
 
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
 }
 
 .project-card {
-    background: #1e293b;
+    background: #FFFFFF;
 
-    padding: 25px;
+    padding: 30px;
 
-    border-radius: 15px;
+    border-radius: 18px;
 
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid #D8CFC4;
 
     transition: 0.4s;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 .project-card:hover {
     transform: translateY(-10px);
 
     box-shadow:
-        0 20px 40px rgba(56,189,248,0.2);
+        0 20px 40px rgba(176,137,104,0.2);
 }
 
 .project-card h3 {
-    color: #38bdf8;
+    color: #7D5A50;
     margin-bottom: 15px;
+}
+
+.project-card p {
+    color: #5C5C5C;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.project-link {
+    display: inline-block;
+
+    text-decoration: none;
+
+    color: #B08968;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.project-link:hover {
+    color: #8B6B4A;
+}
+
+.tech-stack{
+    margin-top: 15px;
+    color: #7D5A50;
+    font-size: 0.95rem;
+    font-weight: 600;
 }
 
 /* CONTACT */
@@ -279,7 +309,7 @@ h2::after {
     width: 100%;
     max-width: 600px;
 
-    background: #1e293b;
+    background:#FFFFFF;
 
     padding: 35px;
 
@@ -310,15 +340,15 @@ h2::after {
 
     border: 1px solid #334155;
 
-    background: #0f172a;
-    color: white;
+    background:#F8F5F2;
+    color:#3B3B3B;
 
     outline: none;
 }
 
 .input-group input:focus,
 .input-group textarea:focus {
-    border-color: #38bdf8;
+    border-color:#B08968;
 
     box-shadow:
         0 0 10px rgba(56,189,248,0.2);
@@ -334,11 +364,11 @@ textarea {
 
     padding: 14px;
 
-    border: none;
+    border:none;
     border-radius: 8px;
 
-    background: #38bdf8;
-    color: black;
+     background: #B08968;
+    color: white;
 
     font-size: 1rem;
     font-weight: 600;
@@ -349,7 +379,7 @@ textarea {
 }
 
 #contactForm button:hover {
-    background: #0ea5e9;
+     background: #8B6B4A;
 }
 
 /* FOOTER */
@@ -359,7 +389,7 @@ footer {
 
     padding: 30px;
 
-    color: #94a3b8;
+    color:#6B6B6B;
 
     border-top:
     1px solid rgba(255,255,255,0.08);
@@ -379,8 +409,8 @@ footer {
     border: none;
     border-radius: 50%;
 
-    background: #38bdf8;
-    color: black;
+     background: #B08968;
+    color: white;
 
     font-size: 1.2rem;
     font-weight: bold;
@@ -410,7 +440,8 @@ footer {
 .admin-card {
     width: 320px;
 
-    background: #1e293b;
+    background:white;
+    border:1px solid #D8CFC4;
 
     padding: 20px;
 
@@ -424,7 +455,7 @@ footer {
 }
 
 .admin-card h3 {
-    color: #38bdf8;
+    color: #7D5A50;
     margin-bottom: 10px;
 }
 
@@ -485,12 +516,12 @@ footer {
 .hero-role {
     font-size: 1.4rem;
     font-weight: 500;
-    color: #e2e8f0;
+    color: #3B3B3B;
     margin-bottom: 12px;
 }
 
 .hero-tagline {
     font-size: 1.1rem;
-    color: #94a3b8;
+    color: #6B6B6B;
     margin-bottom: 30px;
 }
