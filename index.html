@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanmayee S Rao | Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <h2>Portfolio</h2>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="hero-content">
+
+    <p class="hero-greeting">
+        Hello, Curious Mind 
+    </p>
+
+    <h1>
+        I am <span class="highlight-name">Thanmayee S Rao</span>
+    </h1>
+
+    <p class="hero-role">
+        Student | Developer
+    </p>
+
+    <p class="hero-tagline">
+        Turning ideas into web experiences.
+    </p>
+</div>
+
+        <button onclick="scrollToProjects()">
+            View Projects
+        </button>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+
+        <p>
+            I am a Computer Science student passionate about building real-world
+            applications, solving problems, and exploring AI technologies.
+            I enjoy creating responsive web applications and continuously
+            improving my development skills.
+        </p>
+
+        <a href="resume.pdf" download class="resume-btn">
+            Download Resume
+        </a>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+
+        <div class="skills-container">
+            <div class="skill-card">Python</div>
+            <div class="skill-card">Java</div>
+            <div class="skill-card">HTML</div>
+            <div class="skill-card">CSS</div>
+            <div class="skill-card">JavaScript</div>
+            <div class="skill-card">Node.js</div>
+            <div class="skill-card">Express.js</div>
+            <div class="skill-card">MongoDB</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+                <h3>Blood Supply Management System</h3>
+
+                <p>
+                    Developed a system to manage blood donations and requests
+                    efficiently with organized records and tracking.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Weather App</h3>
+
+                <p>
+                    Developed a weather application using API integration to
+                    fetch and display real-time weather information.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Personal Portfolio Website</h3>
+
+                <p>
+                    Built a full-stack portfolio website with contact form,
+                    admin dashboard, Node.js backend, and MongoDB database.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+
+        <div class="contact-container">
+
+            <form id="contactForm">
+
+                <div class="input-group">
+                    <label for="name">Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="message">Message</label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Enter your message"
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Thanmayee S Rao.</p>
+    </footer>
+
+    <button id="topBtn">↑</button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,465 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f172a;
+    color: white;
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 60px;
+
+    background: rgba(2, 6, 23, 0.95);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+nav h2 {
+    color: #38bdf8;
+    font-size: 1.8rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 0;
+    height: 2px;
+
+    background: #38bdf8;
+
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 100px 80px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #38bdf8;
+}
+
+h2::after {
+    content: "";
+    display: block;
+
+    width: 70px;
+    height: 4px;
+
+    background: #38bdf8;
+
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* HOME */
+
+#home {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+    radial-gradient(
+        circle at top,
+        rgba(56,189,248,0.12),
+        transparent 50%
+    );
+}
+
+#home h1 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+#home p {
+    margin: 20px 0;
+    font-size: 1.3rem;
+    color: #cbd5e1;
+}
+
+#home button {
+    padding: 14px 28px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #38bdf8;
+    color: black;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#home button:hover {
+    transform: translateY(-3px);
+    background-color: #0ea5e9;
+}
+
+/* ABOUT */
+
+#about p {
+    max-width: 900px;
+    font-size: 1.05rem;
+}
+
+.resume-btn {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 12px 24px;
+
+    background: #38bdf8;
+    color: black;
+
+    border-radius: 8px;
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.resume-btn:hover {
+    background: #0ea5e9;
+}
+
+/* SKILLS */
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill-card {
+    background: #1e293b;
+
+    padding: 12px 24px;
+
+    border-radius: 30px;
+
+    border: 1px solid transparent;
+
+    transition: 0.3s;
+
+    cursor: default;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #38bdf8;
+
+    box-shadow:
+        0 10px 20px rgba(56,189,248,0.2);
+}
+
+/* PROJECTS */
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: #1e293b;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    transition: 0.4s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 20px 40px rgba(56,189,248,0.2);
+}
+
+.project-card h3 {
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+
+/* CONTACT */
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+}
+
+#contactForm {
+    width: 100%;
+    max-width: 600px;
+
+    background: #1e293b;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.3);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #94a3b8;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    border: 1px solid #334155;
+
+    background: #0f172a;
+    color: white;
+
+    outline: none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #38bdf8;
+
+    box-shadow:
+        0 0 10px rgba(56,189,248,0.2);
+}
+
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+#contactForm button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #38bdf8;
+    color: black;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#contactForm button:hover {
+    background: #0ea5e9;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #94a3b8;
+
+    border-top:
+    1px solid rgba(255,255,255,0.08);
+}
+
+/* TOP BUTTON */
+
+#topBtn {
+    position: fixed;
+
+    bottom: 20px;
+    right: 20px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #38bdf8;
+    color: black;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#topBtn:hover {
+    transform: scale(1.1);
+}
+
+/* ADMIN DASHBOARD */
+
+.admin-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.admin-card {
+    width: 320px;
+
+    background: #1e293b;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.admin-card:hover {
+    transform: translateY(-5px);
+}
+
+.admin-card h3 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    section {
+        padding: 80px 25px;
+    }
+
+    #home h1 {
+        font-size: 2.5rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero-greeting {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+#home h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.highlight-name {
+    color: #38bdf8;
+}
+
+.hero-role {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #e2e8f0;
+    margin-bottom: 12px;
+}
+
+.hero-tagline {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
