@@ -59,14 +59,37 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
        if (res.ok) {
 
-    alert(result.message);
+    const messageBox = document.getElementById("responseMessage");
 
-    form.reset();
+messageBox.style.display = "block";
+messageBox.className = "";
+messageBox.classList.add("success-message");
+messageBox.innerText = result.message;
+
+form.reset();
+
+setTimeout(() => {
+
+    messageBox.style.display = "none";
+
+}, 3000);
 
        }
     else {
 
-    alert("Failed to send message.");
+    const messageBox = document.getElementById("responseMessage");
+
+    messageBox.style.display = "block";
+    messageBox.className = "";
+    messageBox.classList.add("error-message");
+
+    messageBox.innerText = "Failed to send message.";
+
+    setTimeout(() => {
+
+        messageBox.style.display = "none";
+
+    }, 3000);
 
 }
 
@@ -74,7 +97,18 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
     catch (error) {
 
-        alert("Something went wrong. Please try again.");
+        const messageBox = document.getElementById("responseMessage");
+
+messageBox.style.display = "block";
+messageBox.className = "";
+messageBox.classList.add("error-message");
+messageBox.innerText = "Something went wrong. Please try again.";
+
+setTimeout(() => {
+
+    messageBox.style.display = "none";
+
+}, 3000);
 
     }
 
