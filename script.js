@@ -29,8 +29,11 @@ window.addEventListener("scroll", () => {
 });
 
 //Add JavaScript to Send Data
-document.getElementById("contactForm").addEventListener("submit", async function(e) {
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+
     e.preventDefault();
+
+    const form = document.getElementById("contactForm");
 
     const data = {
         name: document.getElementById("name").value,
@@ -38,24 +41,51 @@ document.getElementById("contactForm").addEventListener("submit", async function
         message: document.getElementById("message").value
     };
 
-    const res = await fetch("http://localhost:5000/contact", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
+    try {
 
-    const result = await res.json();
+        const res = await fetch("http://localhost:5000/contact", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(data)
+
+        });
+
+        const result = await res.json();
+
+       if (res.ok) {
+
     alert(result.message);
+
+    form.reset();
+
+       }
+    else {
+
+    alert("Failed to send message.");
+
+}
+
+}
+
+    catch (error) {
+
+        alert("Something went wrong. Please try again.");
+
+    }
+
 });
 
-//After succesfull submission
-document.getElementById("contactForm").reset();
+// //After succesfull submission
+// document.getElementById("contactForm").reset();
 
-document.getElementById("topBtn").addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});
+// document.getElementById("topBtn").addEventListener("click", () => {
+//     window.scrollTo({
+//         top: 0,
+//         behavior: "smooth"
+//     });
+// });
