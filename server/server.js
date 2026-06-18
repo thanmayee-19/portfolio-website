@@ -1,48 +1,100 @@
+require('dotenv').config();
+
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
+const sqlite3 = require('sqlite3').verbose();
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/portfolioDB')
-    .then(() => console.log("MongoDB Connected"))
-    .catch(err => console.log(err));
+app.use(express.static('../'));
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/../index.html");
+});
 
-// Route test
+const db = new sqlite3.Database('./database.db', (err) => {
+
+    if (err) {
+        console.log(err.message);
+    } else {
+        console.log("SQLite Connected!");
+    }
+
+});
+db.run(`
+CREATE TABLE IF NOT EXISTS contacts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    email TEXT,
+    message TEXT
+)
+`);
+
 app.get('/', (req, res) => {
-    res.send("Server is running");
+
+    res.send("Server running!");
+
 });
 
-// Start server
-app.listen(5000, () => {
-    console.log("Server running on port 5000");
+app.post('/contact', (req, res) => {
+
+    const { name, email, message } = req.body;
+
+    db.run(
+
+        `INSERT INTO contacts(name,email,message)
+         VALUES(?,?,?)`,
+
+        [name, email, message],
+
+        function(err) {
+
+            if (err) {
+
+                return res.status(500).json({
+                    message: "Error saving message"
+                });
+
+            }
+
+            res.status(200).json({
+                message: "Message sent successfully!"
+            });
+
+        }
+
+    );
+
 });
 
-//Creat API route
-const Contact = require('./models/Contact');
+app.get('/contacts', (req, res) => {
 
-app.post('/contact', async (req, res) => {
-    try {
-        const newContact = new Contact(req.body);
-        await newContact.save();
-        res.status(200).json({ message: "Message saved!" });
-    } catch (error) {
-        res.status(500).json({ error: "Error saving message" });
-    }
+    db.all(
+
+        `SELECT * FROM contacts`,
+
+        [],
+
+        (err, rows) => {
+
+            if (err) {
+
+                return res.status(500).json(err);
+
+            }
+
+            res.json(rows);
+
+        }
+
+    );
+
 });
 
-app.get('/contacts', async (req, res) => {
-    try {
-        const contacts = await Contact.find();
-        res.json(contacts);
-    } catch (error) {
-        res.status(500).json({ error: "Error fetching data" });
-    }
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
-
-

@@ -24,3 +24,17 @@ yarn-error.log*
 
 # Misc
 *.log
+
+# SQLite journal files
+
+*.db-journal
+*.sqlite-journal
+
+
+# Optional:
+# Ignore database if you don't want
+# contact messages uploaded to GitHub
+
+database.db
+
+
