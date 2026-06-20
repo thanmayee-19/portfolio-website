@@ -43,7 +43,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
     try {
 
-        const res = await fetch("http://localhost:5000/contact", {
+        const res = await fetch("https://portfolio-backend-4rrb.onrender.com/contact", {
 
             method: "POST",
 

@@ -1,5 +1,5 @@
 async function fetchContacts() {
-    const res = await fetch("http://localhost:5000/contacts");
+    const res = await fetch("https://portfolio-backend-4rrb.onrender.com/contacts");
     const data = await res.json();
 
     const container = document.getElementById("adminContainer");
